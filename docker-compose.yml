@@ -5,19 +5,19 @@ services:
   web:
     image: wordpress
     ports:
-      - 8287:80
+      - 80
     environment:
       WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
       WORDPRESS_DB_HOST: ${WORDPRESS_DB_HOST}
       WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
-      WORDPRESS_DB_NAME: silicon
-      VIRTUAL_HOST: silicon.mgcoders.com
-      LETSENCRYPT_HOST: silicon.mgcoders.com
-      LETSENCRYPT_EMAIL: info@mgcoders.com
+      WORDPRESS_DB_NAME: calcium
+      VIRTUAL_HOST: calcium.magnesium.coop
+      LETSENCRYPT_HOST: calcium.magnesium.coop
+      LETSENCRYPT_EMAIL: info@magnesium.coop
     volumes:
       - ./themes:/var/www/html/wp-content/themes
-      - ../wp-silicon-files/plugins:/var/www/html/wp-content/plugins
-      - ../wp-silicon-files/uploads:/var/www/html/wp-content/uploads
+      - ../wp-calcium-files/plugins:/var/www/html/wp-content/plugins
+      - ../wp-calcium-files/uploads:/var/www/html/wp-content/uploads
       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
 
 networks:
