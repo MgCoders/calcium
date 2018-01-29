@@ -1,18 +1,26 @@
-web:
+version: '3.1'
+
+services:
+
+  web:
     image: wordpress
-    links:
-     - mysql
-    environment:
-     - WORDPRESS_DB_PASSWORD=password
     ports:
-     - "8080:80"
-    working_dir: /var/www/html
-    volumes:
-     - ./wordpress/themes:/var/www/html/wp-content/themes
-     - ./wordpress/plugins:/var/www/html/wp-content/plugins
-     - ./wordpress/uploads:/var/www/html/wp-content/uploads
-mysql:
-    image: mysql:5.7
+      - 8287:80
     environment:
-     - MYSQL_ROOT_PASSWORD=password
-     - MYSQL_DATABASE=wordpress
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+      WORDPRESS_DB_HOST: ${WORDPRESS_DB_HOST}
+      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
+      WORDPRESS_DB_NAME: silicon
+      VIRTUAL_HOST: silicon.mgcoders.com
+      LETSENCRYPT_HOST: silicon.mgcoders.com
+      LETSENCRYPT_EMAIL: info@mgcoders.com
+    volumes:
+      - ./themes:/var/www/html/wp-content/themes
+      - ../wp-silicon-files/plugins:/var/www/html/wp-content/plugins
+      - ../wp-silicon-files/uploads:/var/www/html/wp-content/uploads
+      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+
+networks:
+  default:
+    external:
+      name: nginx-proxy

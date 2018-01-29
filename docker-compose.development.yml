@@ -1,0 +1,40 @@
+version: '3.1'
+
+services:
+
+  web:
+    image: wordpress
+    ports:
+      - 80:80
+    environment:
+      WORDPRESS_DB_PASSWORD: password
+      VIRTUAL_HOST: silicon.mgcoders.com
+      LETSENCRYPT_HOST: silicon.mgcoders.com
+      LETSENCRYPT_EMAIL: info@mgcoders.com
+    volumes:
+      - ./themes:/var/www/html/wp-content/themes
+      - ./plugins:/var/www/html/wp-content/plugins
+      - ./uploads:/var/www/html/wp-content/uploads
+      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+    links: 
+      - mysql
+
+  mysql:
+      image: mysql:5.7
+      environment:
+        - MYSQL_ROOT_PASSWORD=password
+        - MYSQL_DATABASE=wordpress
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 1000:80
+    environment:
+      - MYSQL_ROOT_PASSWORD:password
+    links: 
+      - mysql:db
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
