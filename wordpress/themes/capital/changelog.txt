@@ -1,0 +1,15 @@
+Capital Theme
+http://www.wpzoom.com/themes/capital
+
+CHANGELOG
+---------
+
+v 1.1. (April 2, 2015)
+
+    - Social, Twitter, Instagram widgets removed in favour of new plugins: http://www.wpzoom.com/plugins/
+    - Minor modifications in the structure of theme folders and files
+
+
+v 1.0  - December 8, 2014
+
+	- initial release
