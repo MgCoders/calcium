@@ -1796,3 +1796,87 @@ html.mm-opening .mm-slideout { -webkit-transform: translate(140px, 0); -moz-tran
 @media all and (min-width: 550px) {
 html.mm-opening .mm-slideout { -webkit-transform: translate(440px, 0); -moz-transform: translate(440px, 0); -ms-transform: translate(440px, 0); -o-transform: translate(440px, 0); transform: translate(440px, 0); }
 }
+
+
+
+
+@media (max-width: 600px) {
+	.navbar-brand {
+		display:none;
+	}
+	.home_column_my {
+		width: 100%!important;
+	}
+}
+
+span.cat-links{
+	display:none;
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+	.navbar-brand {
+		margin-left:40%;
+	}
+	.home_column_my {
+		width: 100%!important;
+	}
+}
+
+@media screen and (min-width: 901px) and (max-width: 1400px) {
+	.navbar-brand {
+		margin-left:20%;
+	}
+}
+
+@media (min-width: 1401px) {
+	.navbar-brand {
+		margin-left:12%;
+	}
+	.site-header {
+		background-position: 5%;
+	}
+}
+
+
+.last .widget.wpzoom-singlepage, #sidebar {
+  background-color:#eee;
+	border-radius: 4px;
+  padding: 15px;
+}
+
+.home_column.last {
+	padding: 20px 00px !important;
+	border:0px!important;
+}
+
+.title, .entry-title {
+	color: #233872 !important;
+}
+
+.google-maps {
+    position: relative;
+    padding-bottom: 75%;
+    height: 0;
+    overflow: hidden;
+}
+.google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.footer-widgets .inner-wrap > :nth-of-type(2) {
+	width: 24%;
+}
+
+.footer-widgets .inner-wrap > :nth-of-type(1) {
+	width: 72%;
+}
+
+.navbar-search .search-field {
+	background-color: #178842;
+}
+
+
