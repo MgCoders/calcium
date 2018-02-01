@@ -8,9 +8,9 @@ services:
       - 80:80
     environment:
       WORDPRESS_DB_PASSWORD: password
-      VIRTUAL_HOST: silicon.mgcoders.com
-      LETSENCRYPT_HOST: silicon.mgcoders.com
-      LETSENCRYPT_EMAIL: info@mgcoders.com
+      VIRTUAL_HOST: calcium.magnesium.coop
+      LETSENCRYPT_HOST: calcium.magnesium.coop
+      LETSENCRYPT_EMAIL: info@magnesium.coop
     volumes:
       - ./themes:/var/www/html/wp-content/themes
       - ./plugins:/var/www/html/wp-content/plugins

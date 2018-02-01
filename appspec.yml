@@ -3,7 +3,7 @@ os: linux
 
 files:
  - source: /
-   destination: /home/ubuntu/wp-silicon-deploy
+   destination: /home/ubuntu/wp-calcium-deploy
 
 permissions:
  - object: /
