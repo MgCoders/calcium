@@ -3,7 +3,7 @@ os: linux
 
 files:
  - source: /
-   destination: /home/ubuntu/wp-calcium-deploy
+   destination: /home/ubuntu/wp-REPLACE_PROJECT_NAME-deploy
 
 permissions:
  - object: /
@@ -12,6 +12,10 @@ permissions:
    group: ubuntu
 
 hooks:
+  BeforeInstall:	
+    - location: prepare_stuff.sh	
+      timeout: 300	
+      runas: root
   AfterInstall:
     - location: stop_server.sh
       timeout: 300

@@ -1833,7 +1833,7 @@ span.cat-links{
 		margin-left:12%;
 	}
 	.site-header {
-		background-position: 5%;
+		background-position: 4% 50% !importat;
 	}
 }
 

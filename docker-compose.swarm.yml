@@ -1,0 +1,42 @@
+version: '3.3'
+
+services:
+
+  blog:
+    image: REPLACE_IMAGE_NAME
+    networks:
+      - traefik-net
+    environment:
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+      WORDPRESS_DB_HOST: ${WORDPRESS_DB_HOST}
+      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
+      WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
+      VIRTUAL_HOST: ${VIRTUAL_HOST}
+      LETSENCRYPT_HOST: ${LETSENCRYPT_HOST}
+      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
+    deploy:
+      labels:
+        - "traefik.port=80"
+        - "traefik.backend=blog"
+        - "traefik.frontend.rule=Host:${VIRTUAL_HOST}"
+      restart_policy:
+        condition: on-failure
+
+  traefik:
+    image: traefik:1.5
+    command: --web --docker --docker.swarmmode --docker.watch
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - traefik-net
+    ports:
+      - 80:80
+      - 8080:8080
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+ 
+networks:
+  traefik-net:
+    driver: overlay

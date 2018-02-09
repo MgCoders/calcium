@@ -2,8 +2,8 @@ version: '3.1'
 
 services:
 
-  web:
-    image: wordpress
+  blog:
+    image: REPLACE_IMAGE_NAME
     ports:
       - 80
     environment:
@@ -14,11 +14,6 @@ services:
       VIRTUAL_HOST: ${VIRTUAL_HOST}
       LETSENCRYPT_HOST: ${LETSENCRYPT_HOST}
       LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
-    volumes:
-      - ./themes:/var/www/html/wp-content/themes
-      - ../wp-calcium-files/plugins:/var/www/html/wp-content/plugins
-      - ../wp-calcium-files/uploads:/var/www/html/wp-content/uploads
-      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
 
 networks:
   default:

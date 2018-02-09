@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #/bin/bash
 set -x
-cd /home/ubuntu/wp-calcium-deploy
-docker-compose kill
+cd /home/ubuntu/wp-REPLACE_PROJECT_NAME-deploy
+docker-compose -f docker-compose.testing.yml kill
 if [ $? -eq 0 ]
 then
   echo "Successfull"
