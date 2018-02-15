@@ -1,5 +1,7 @@
 <project>
     <artifactId>calcium</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
+    <urlTest>calcium.magnesium.coop</urlTest>
+    <urlProd>educacioncooperativa.edu.uy</urlProd>
 </project>
 
