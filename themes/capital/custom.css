@@ -11,3 +11,37 @@
 * and modify it to your liking.
 */
 
+.designed-by{
+	display:none;	
+}
+
+li div div.li-content {
+	display:none;
+}
+
+.feature-posts-list img {
+	background-color:#fff;
+	border-radius:4px;
+}
+
+.feature-posts-list span.post-excerpt {
+	text-align:justify;
+}
+
+.home_column_my .widget_media_video, .home_column_my .widget_text  {
+	width: 45% !important;
+	height:auto;
+	position:relative;
+	float:left;
+	margin: auto 2% !important;
+}
+
+.home_column_my .widget_media_video iframe {
+	width: 100% !important;
+	height: 100%;
+}
+
+.site-header {
+	background-position: 3% 40%;
+}
+
