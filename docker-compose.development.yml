@@ -7,14 +7,10 @@ services:
     ports:
       - 80:80
     environment:
-      WORDPRESS_DB_PASSWORD: password
-      VIRTUAL_HOST: titanium.magnesium.coop
-      LETSENCRYPT_HOST: titanium.magnesium.coop
-      LETSENCRYPT_EMAIL: info@magnesium.coop
+      WORDPRESS_DB_PASSWORD: password      
     volumes:
-      - ./wp-content:/var/www/html/wp-content
-      - ./themes:/var/www/html/wp-content/themes
-      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+      - calcium_vol:/var/www/html/wp-content
+      - ./themes:/var/www/html/wp-content/themes   
     links: 
       - mysql
 
@@ -32,6 +28,9 @@ services:
       - MYSQL_ROOT_PASSWORD:password
     links: 
       - mysql:db
+
+volumes:
+  calcium_vol:
 
 networks:
   default:
