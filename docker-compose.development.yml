@@ -2,14 +2,13 @@ version: '3.1'
 
 services:
 
-  web:
+  web_calcium:
     image: wordpress
     ports:
       - 80:80
     environment:
       WORDPRESS_DB_PASSWORD: password      
     volumes:
-      - calcium_vol:/var/www/html/wp-content
       - ./themes:/var/www/html/wp-content/themes   
     links: 
       - mysql
@@ -28,11 +27,3 @@ services:
       - MYSQL_ROOT_PASSWORD:password
     links: 
       - mysql:db
-
-volumes:
-  calcium_vol:
-
-networks:
-  default:
-    external:
-      name: nginx-proxy
